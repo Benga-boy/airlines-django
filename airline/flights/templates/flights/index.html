@@ -1,0 +1,9 @@
+{% extends 'flights/layout.html' %}
+
+{% block body %}
+  {% for flight in flights %}
+  <p>{{flight.origin}} to {{flight.destination}} in {{flight.duration}} minutes <a href="{% url 'flight' flight.id %}">{{flight.id}}</a></p>
+    {% empty %}
+    <p>No Flights Currently!</p>
+  {% endfor %}
+{% endblock %}
